@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Comic Sans MS', sans-serif;
+  background: linear-gradient(to bottom right, #b2f7ef, #e0fbe2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #d22b2b;
+  text-shadow: 1px 1px 1px #000;
+  margin-bottom: 1rem;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.score-box, .timer-box {
+  padding: 0.4rem 1rem;
+  background: linear-gradient(to right, #c471f5, #fa71cd);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+#startBtn {
+  background: #00c9a7;
+}
+
+#resetBtn {
+  background: #f25f5c;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.hole {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #333;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  box-shadow: inset -4px -4px 10px rgba(255,255,255,0.1),
+              inset 4px 4px 10px rgba(0,0,0,0.4);
+}
+
+.hole.mole {
+  background: radial-gradient(circle at top left, #ffa751, #f57236);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  animation: pop 0.2s ease-in-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+#gameOverScreen {
+  margin-top: 1.5rem;
+}
+
+#gameOverScreen.hidden {
+  display: none;
+}
+
+#gameOverScreen button {
+  margin-top: 10px;
+  padding: 0.5rem 1.5rem;
+  background: #eee;
+  color: #000;
+}
